@@ -99,7 +99,7 @@ if __name__ == "__main__":
         + f"and {statistics['focail'][2]} were ignored (tagged symbols, proper nouns, etc.)"
     )
 
-    vegalite = counts_to_vegalite(f"{CAOL_LE_CAOL.fada}...", counts)
+    vegalite = counts_to_vegalite(f"{CAOL_LE_CAOL.fada} ...", counts)
     with open(vegalite_file, "w") as f:
         json.dump(vegalite, f, indent=2)
 
