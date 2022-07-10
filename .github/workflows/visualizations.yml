@@ -12,6 +12,8 @@ on:
       - 'pyproject.toml'
       - 'poetry.lock'
       - 'suspected_typos.txt'
+      - '.github/actions/visualizations.yml'
+      - '.github/actions/jekyll.yml'
 
 jobs:
   build:
