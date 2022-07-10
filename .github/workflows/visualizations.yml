@@ -1,0 +1,35 @@
+# https://github.com/helaili/jekyll-action
+#
+name: Testing the GitHub Pages publication
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'soirbhiochas/**'
+      - 'build.sh'
+      - 'pyproject.toml'
+      - 'poetry.lock'
+      - 'suspected_typos.txt'
+
+jobs:
+  build:
+    runs-on: python:3.10
+    name: Python visualization
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install poetry
+      run: pipx install poetry
+    - uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+        cache: 'poetry'
+    - run: ./build.sh
+      name: Run soirbhiochas
+    - name: Commit visualization changes
+      run: |
+        git config --global user.name 'Phil Weir (via action)'
+        git config --global user.email 'phil.t.weir@gmail.com'
+        git commit -am "Automated visualization build" docs/
+        git push

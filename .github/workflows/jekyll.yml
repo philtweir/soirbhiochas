@@ -4,6 +4,8 @@ name: Testing the GitHub Pages publication
 
 on:
   push:
+    branches:
+      - master
     paths:
       - 'docs/**'
 
