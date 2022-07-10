@@ -1,0 +1,33 @@
+[tool.poetry]
+name = "soirbhiochas"
+version = "0.1.0"
+description = "Seicire rialacha"
+authors = ["Phil Weir <phil.t.weir@gmail.com>"]
+license = "MIT"
+packages = [
+    { include = "soirbhiochas" }
+]
+
+
+[tool.poetry.dependencies]
+python = ">=3.9,<4.0"
+avantpy-extended = "^0.1.2"
+pyconll = "^3.1.0"
+requests = "^2.26.0"
+lxml = "^4.7.1"
+conllu = "^4.4.1"
+gramadan-py = { "develop" = true, "path" = "../Gramadan/Python" }
+tabulate = "^0.8.9"
+tqdm = "^4.63.1"
+pandas = "^1.4.2"
+altair = "^4.2.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.5"
+black = "^21.12b0"
+mypy = "^0.930"
+pylint = "^2.12.2"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"

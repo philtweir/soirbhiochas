@@ -1,0 +1,2 @@
+áigéan,NOUN,aigéan,NOUN
+Tuigfar,VERB,Tuigfear,VERB
