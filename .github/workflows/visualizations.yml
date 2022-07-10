@@ -26,11 +26,11 @@ jobs:
       with:
         image: python:3.10
         run: ./build.sh
-        options: -v ${{ github.workspace }}:/app -w /app
       name: Run soirbhiochas
     - name: Commit visualization changes
       run: |
         git config --global user.name 'Phil Weir (via action)'
         git config --global user.email 'phil.t.weir@gmail.com'
-        git commit -am "Automated visualization build" docs/
+        git add docs/
+        git commit -m "Automated visualization build"
         git push
