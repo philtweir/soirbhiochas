@@ -20,6 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Python visualization
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - uses: addnab/docker-run-action@v3
       with:
         image: python:3.10
