@@ -23,7 +23,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
       with:
-         token: ${{ secrets.GH_PAT }}
+         token: ${{ secrets.GH_PA_TOKEN }}
     - uses: addnab/docker-run-action@v3
       with:
         image: python:3.10
