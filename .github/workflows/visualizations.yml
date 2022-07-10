@@ -15,17 +15,13 @@ on:
 
 jobs:
   build:
-    runs-on: python:3.10
+    runs-on: ubuntu-latest
     name: Python visualization
     steps:
-    - uses: actions/checkout@v3
-    - name: Install poetry
-      run: pipx install poetry
-    - uses: actions/setup-python@v4
+    - uses: addnab/docker-run-action@v3
       with:
-        python-version: '3.10'
-        cache: 'poetry'
-    - run: ./build.sh
+        image: python:3.10
+        run: ./build.sh
       name: Run soirbhiochas
     - name: Commit visualization changes
       run: |
