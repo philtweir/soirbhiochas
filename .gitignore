@@ -1,0 +1,7 @@
+__pycache__
+*.egg-info/
+build/
+*.conllu
+/data
+wikt-irish-prefixes/
+/caol_le_caol.json

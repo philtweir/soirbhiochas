@@ -3,7 +3,9 @@
 name: Testing the GitHub Pages publication
 
 on:
-  push
+  push:
+    paths:
+      - 'docs/**'
 
 jobs:
   jekyll:

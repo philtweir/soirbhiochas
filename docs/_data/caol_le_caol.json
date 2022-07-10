@@ -160,7 +160,7 @@
               "color": {
                 "condition": {
                   "value": "#eeeeee",
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": "#27a827"
               },
@@ -173,7 +173,7 @@
               }
             },
             "selection": {
-              "selector210": {
+              "selector001": {
                 "type": "single",
                 "empty": "none"
               }
@@ -197,7 +197,7 @@
               "color": {
                 "condition": {
                   "value": "#eeeeee",
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": "#008080"
               },
@@ -229,7 +229,7 @@
               "color": {
                 "condition": {
                   "value": "#eeeeee",
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": "#008080"
               },
@@ -265,7 +265,7 @@
               "color": {
                 "condition": {
                   "value": "#eeeeee",
-                  "selection": "selector211"
+                  "selection": "selector002"
                 },
                 "value": "#dd0000"
               },
@@ -278,7 +278,7 @@
               }
             },
             "selection": {
-              "selector211": {
+              "selector002": {
                 "type": "single",
                 "empty": "none"
               }
@@ -306,7 +306,7 @@
               "opacity": {
                 "condition": {
                   "value": 0.9,
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": 0.05
               },
@@ -343,7 +343,7 @@
               "opacity": {
                 "condition": {
                   "value": 0,
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": 1
               }
@@ -366,7 +366,7 @@
               "opacity": {
                 "condition": {
                   "value": 0.9,
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": 0.0
               },
@@ -407,7 +407,7 @@
               "opacity": {
                 "condition": {
                   "value": 0,
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": 1
               }
@@ -440,7 +440,7 @@
               "opacity": {
                 "condition": {
                   "value": 0,
-                  "selection": "selector210"
+                  "selection": "selector001"
                 },
                 "value": 1
               }

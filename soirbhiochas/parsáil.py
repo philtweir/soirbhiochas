@@ -72,7 +72,7 @@ class Lexicon:
         if cache is None:
             raise original_error
 
-        lemmatized = simplemma.lemmatize(demutated, self.langdata)
+        lemmatized = simplemma.lemmatize(demutated, "ga")
         try:
             word = self.database[(comhartha.upos, lemmatized)]
             return FocalGinearalta(comhartha, word)
@@ -101,10 +101,9 @@ class Lexicon:
         raise original_error
 
     def load(self):
-        path = os.path.join(os.path.dirname(gramadán_db.__file__), os.pardir, os.pardir, 'output', 'data')
+        path = os.getenv('BUNAMO_DIR', 'data')
         self.database = gramadán_db.SmartDatabase(path, demutate=True)
         self.database.load()
-        self.langdata = simplemma.load_data('ga')
         self.guessing_lemmatizer = GuessingLemmatizer()
         self.guessing_lemmatizer.load()
         self._cache = {}

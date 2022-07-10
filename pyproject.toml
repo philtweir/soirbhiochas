@@ -16,11 +16,12 @@ pyconll = "^3.1.0"
 requests = "^2.26.0"
 lxml = "^4.7.1"
 conllu = "^4.4.1"
-gramadan-py = { "develop" = true, "path" = "../Gramadan/Python" }
+gramadan-py = { git = "https://github.com/philtweir/Gramadan.git", subdirectory = "Python", branch = "python-implementation-v2" }
 tabulate = "^0.8.9"
 tqdm = "^4.63.1"
 pandas = "^1.4.2"
 altair = "^4.2.0"
+simplemma = "^0.7.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
@@ -29,5 +30,5 @@ mypy = "^0.930"
 pylint = "^2.12.2"
 
 [build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
+requires = ["poetry-core @ git+https://github.com/python-poetry/poetry-core.git", "setuptools", "wheel"]
+build-backend = "poetry.core.masonry.api"
