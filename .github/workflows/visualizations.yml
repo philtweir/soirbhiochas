@@ -24,6 +24,7 @@ jobs:
       with:
         image: python:3.10
         run: ./build.sh
+        options: -v ${{ github.workspace }}:/app -w /app
       name: Run soirbhiochas
     - name: Commit visualization changes
       run: |
