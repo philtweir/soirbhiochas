@@ -33,5 +33,4 @@ jobs:
         git config --global user.name 'Phil Weir (via action)'
         git config --global user.email 'phil.t.weir@gmail.com'
         git add docs/
-        git commit -m "Automated visualization build"
-        git push
+        git diff --quiet && (git commit -m "Automated visualization build" && git push && echo "Pushed changes")
