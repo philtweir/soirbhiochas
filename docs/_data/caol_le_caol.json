@@ -1,0 +1,662 @@
+{
+  "config": {
+    "view": {
+      "continuousWidth": 400,
+      "continuousHeight": 300,
+      "strokeOpacity": 0
+    },
+    "font": "League Spartan",
+    "range": {
+      "category": [
+        "#008080",
+        "#aaaaaa",
+        "#dd0000",
+        "#eeeeee",
+        "#444444"
+      ]
+    }
+  },
+  "data": {
+    "name": "data-5022a735f9a1164d27174259071ee7b4"
+  },
+  "facet": {
+    "row": {
+      "field": "name",
+      "header": {
+        "labels": false
+      },
+      "sort": {
+        "field": "ix"
+      },
+      "title": null,
+      "type": "nominal"
+    }
+  },
+  "spec": {
+    "layer": [
+      {
+        "mark": {
+          "type": "text",
+          "align": "left",
+          "dx": -200,
+          "fontSize": {
+            "expr": "(1 - 0.2 * datum.level_0) * 20"
+          },
+          "xOffset": {
+            "expr": "datum.level_0 * 20"
+          },
+          "yOffset": -20
+        },
+        "encoding": {
+          "text": {
+            "field": "name",
+            "type": "nominal"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "bar",
+          "height": 6,
+          "xOffset": {
+            "expr": "datum.level_0 * 20"
+          },
+          "yOffset": -10
+        },
+        "encoding": {
+          "color": {
+            "field": "color_key",
+            "legend": null,
+            "type": "nominal"
+          },
+          "order": {
+            "field": "split",
+            "type": "quantitative"
+          },
+          "x": {
+            "axis": {
+              "labels": false,
+              "title": null
+            },
+            "field": "value",
+            "stack": "normalize",
+            "type": "quantitative"
+          },
+          "y": {
+            "axis": {
+              "labels": false,
+              "title": null
+            },
+            "field": "variable",
+            "sort": [
+              "offset",
+              "tick",
+              "excepted",
+              "fail"
+            ],
+            "type": "nominal"
+          }
+        },
+        "transform": [
+          {
+            "fold": [
+              "offset",
+              "tick",
+              "excepted",
+              "fail"
+            ]
+          },
+          {
+            "calculate": "indexof(['offset', 'tick', 'excepted', 'fail'], datum.key)",
+            "as": "split"
+          },
+          {
+            "calculate": "datum.final && datum.key == \"fail\" ? \"fail_all\" : datum.key",
+            "as": "color_key"
+          }
+        ]
+      },
+      {
+        "mark": {
+          "type": "rect",
+          "color": "#f8f8f8",
+          "height": 60,
+          "x": 0,
+          "x2": {
+            "expr": "datum.level_0 * 20 * 0.9"
+          },
+          "yOffset": 20
+        }
+      },
+      {
+        "mark": {
+          "type": "rect",
+          "color": "#008080",
+          "height": 60,
+          "x": 0,
+          "x2": {
+            "expr": "datum.level_0 * 20 * 0.1"
+          },
+          "yOffset": 20
+        }
+      },
+      {
+        "layer": [
+          {
+            "mark": {
+              "type": "rect",
+              "cornerRadius": 10,
+              "cursor": "pointer",
+              "height": 30,
+              "x2Offset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "yOffset": 20
+            },
+            "encoding": {
+              "color": {
+                "condition": {
+                  "value": "#eeeeee",
+                  "selection": "selector210"
+                },
+                "value": "#27a827"
+              },
+              "x": {
+                "datum": 0
+              },
+              "x2": {
+                "field": "tick_norm",
+                "type": "quantitative"
+              }
+            },
+            "selection": {
+              "selector210": {
+                "type": "single",
+                "empty": "none"
+              }
+            }
+          },
+          {
+            "mark": {
+              "type": "rect",
+              "cornerRadius": 10,
+              "cursor": "auto",
+              "height": 30,
+              "x2Offset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "yOffset": 20
+            },
+            "encoding": {
+              "color": {
+                "condition": {
+                  "value": "#eeeeee",
+                  "selection": "selector210"
+                },
+                "value": "#008080"
+              },
+              "x": {
+                "field": "pass_norm",
+                "type": "quantitative"
+              },
+              "x2": {
+                "field": "tick_norm",
+                "type": "quantitative"
+              }
+            }
+          },
+          {
+            "mark": {
+              "type": "rect",
+              "cornerRadius": 10,
+              "cursor": "auto",
+              "height": 30,
+              "x2Offset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "yOffset": 20
+            },
+            "encoding": {
+              "color": {
+                "condition": {
+                  "value": "#eeeeee",
+                  "selection": "selector210"
+                },
+                "value": "#008080"
+              },
+              "x": {
+                "field": "pass_norm",
+                "type": "quantitative"
+              },
+              "x2": {
+                "datum": 1
+              }
+            },
+            "transform": [
+              {
+                "filter": "(!datum.final)"
+              }
+            ]
+          },
+          {
+            "mark": {
+              "type": "rect",
+              "cornerRadius": 10,
+              "cursor": "pointer",
+              "height": 30,
+              "x2Offset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20"
+              },
+              "yOffset": 20
+            },
+            "encoding": {
+              "color": {
+                "condition": {
+                  "value": "#eeeeee",
+                  "selection": "selector211"
+                },
+                "value": "#dd0000"
+              },
+              "x": {
+                "field": "pass_norm",
+                "type": "quantitative"
+              },
+              "x2": {
+                "datum": 1
+              }
+            },
+            "selection": {
+              "selector211": {
+                "type": "single",
+                "empty": "none"
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.final"
+              }
+            ]
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "dx": -200,
+              "fontSize": {
+                "expr": "(1 - 0.2 * datum.level_0) * 20"
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20 + 5"
+              },
+              "yOffset": 10
+            },
+            "encoding": {
+              "opacity": {
+                "condition": {
+                  "value": 0.9,
+                  "selection": "selector210"
+                },
+                "value": 0.05
+              },
+              "text": {
+                "field": "joined_samples",
+                "type": "nominal"
+              }
+            },
+            "transform": [
+              {
+                "calculate": "join(datum.samples, \", \")",
+                "as": "joined_samples"
+              }
+            ]
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "color": "white",
+              "dx": -200,
+              "fontSize": {
+                "expr": "(1 - 0.2 * datum.level_0) * 20"
+              },
+              "text": {
+                "expr": "round(datum.tick * 100 / datum.total) + \"% (\" + datum.tick + \")\""
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20 + 5"
+              },
+              "yOffset": 10
+            },
+            "encoding": {
+              "opacity": {
+                "condition": {
+                  "value": 0,
+                  "selection": "selector210"
+                },
+                "value": 1
+              }
+            }
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "left",
+              "color": "red",
+              "dx": -200,
+              "fontSize": 15,
+              "fontWeight": "bold",
+              "xOffset": {
+                "expr": "datum.level_0 * 20 + 20"
+              },
+              "yOffset": 30
+            },
+            "encoding": {
+              "opacity": {
+                "condition": {
+                  "value": 0.9,
+                  "selection": "selector210"
+                },
+                "value": 0.0
+              },
+              "text": {
+                "field": "joined_samples",
+                "type": "nominal"
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.final"
+              },
+              {
+                "calculate": "\"...\" + join(datum.samples_fail, \", \")",
+                "as": "joined_samples"
+              }
+            ]
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "right",
+              "color": "white",
+              "dx": -200,
+              "fontSize": {
+                "expr": "(1 - 0.2 * datum.level_0) * 13"
+              },
+              "fontWeight": "bold",
+              "text": {
+                "expr": "\"Exc: \" + round(datum.excepted * 100 / datum.total) + \"% (\" + datum.excepted + \")\""
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20 + 380"
+              },
+              "yOffset": 3
+            },
+            "encoding": {
+              "opacity": {
+                "condition": {
+                  "value": 0,
+                  "selection": "selector210"
+                },
+                "value": 1
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.final"
+              }
+            ]
+          },
+          {
+            "mark": {
+              "type": "text",
+              "align": "right",
+              "color": "white",
+              "dx": -200,
+              "fontSize": {
+                "expr": "(1 - 0.2 * datum.level_0) * 13"
+              },
+              "fontWeight": "bold",
+              "text": {
+                "expr": "\"F: \" + round(datum.fail * 100 / datum.total) + \"% (\" + datum.fail + \")\""
+              },
+              "xOffset": {
+                "expr": "datum.level_0 * 20 + 380"
+              },
+              "yOffset": 18
+            },
+            "encoding": {
+              "opacity": {
+                "condition": {
+                  "value": 0,
+                  "selection": "selector210"
+                },
+                "value": 1
+              }
+            },
+            "transform": [
+              {
+                "filter": "datum.final"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "transform": [
+      {
+        "calculate": "datum.pass + datum.fail",
+        "as": "used"
+      },
+      {
+        "calculate": "datum.excepted / datum.used",
+        "as": "excepted_norm"
+      },
+      {
+        "calculate": "datum.pass / datum.used",
+        "as": "pass_norm"
+      },
+      {
+        "calculate": "datum.tick / datum.used",
+        "as": "tick_norm"
+      },
+      {
+        "calculate": "datum.fail / datum.used",
+        "as": "fail_norm"
+      }
+    ]
+  },
+  "padding": 0,
+  "spacing": 0,
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
+  "datasets": {
+    "data-5022a735f9a1164d27174259071ee7b4": [
+      {
+        "level_0": 0,
+        "level_1": 0,
+        "pass": 90497,
+        "tick": 88892,
+        "fail": 160,
+        "samples": [
+          "As",
+          "l\u00e1r",
+          "na",
+          "tubaiste",
+          "is"
+        ],
+        "samples_fail": [
+          "biro",
+          "agena",
+          "Bordcheantair",
+          "Bhordcheantar",
+          "tsecoind"
+        ],
+        "offset": 0,
+        "excepted": 1605,
+        "name": "Caol le caol, leathan le leathan",
+        "total": 90657,
+        "final": true
+      },
+      {
+        "level_0": 1,
+        "level_1": 0,
+        "pass": 90,
+        "tick": 90,
+        "fail": 1675,
+        "samples": [
+          "Ansin",
+          "Anseo"
+        ],
+        "samples_fail": [
+          "gCeanncheathr\u00fa",
+          "faoina",
+          "neamhchead",
+          "ina",
+          "thraenacha"
+        ],
+        "offset": 0,
+        "excepted": 0,
+        "name": "...ach amh\u00e1in 'ansin' agus 'anseo'",
+        "total": 1765,
+        "final": false
+      },
+      {
+        "level_0": 1,
+        "level_1": 1,
+        "pass": 893,
+        "tick": 893,
+        "fail": 782,
+        "samples": [
+          "gCeanncheathr\u00fa",
+          "neamhchead",
+          "inr\u00e1taithe",
+          "comhioml\u00e1n",
+          "tSeanchill"
+        ],
+        "samples_fail": [
+          "faoina",
+          "ina",
+          "thraenacha",
+          "ar\u00eds",
+          "lena"
+        ],
+        "offset": 90,
+        "excepted": 0,
+        "name": "...agus roinnt focail chumaisc",
+        "total": 1765,
+        "final": false
+      },
+      {
+        "level_0": 1,
+        "level_1": 2,
+        "pass": 532,
+        "tick": 532,
+        "fail": 250,
+        "samples": [
+          "faoina",
+          "ina",
+          "lena",
+          "inar",
+          "Lena"
+        ],
+        "samples_fail": [
+          "thraenacha",
+          "ar\u00eds",
+          "biro",
+          "age",
+          "agena"
+        ],
+        "offset": 983,
+        "excepted": 0,
+        "name": "...agus roinnt reamhfhocail",
+        "total": 1765,
+        "final": false
+      },
+      {
+        "level_0": 1,
+        "level_1": 3,
+        "pass": 39,
+        "tick": 39,
+        "fail": 211,
+        "samples": [
+          "thraenacha",
+          "Gaelscoileanna",
+          "haturnaetha",
+          "Ghaelach",
+          "gc\u00e9adlaethanta"
+        ],
+        "samples_fail": [
+          "ar\u00eds",
+          "biro",
+          "age",
+          "agena",
+          "Bordcheantair"
+        ],
+        "offset": 1515,
+        "excepted": 0,
+        "name": "...agus nuair a bh\u00edonn 'ae' leathan i nd\u00e1irire",
+        "total": 1765,
+        "final": false
+      },
+      {
+        "level_0": 1,
+        "level_1": 4,
+        "pass": 48,
+        "tick": 48,
+        "fail": 163,
+        "samples": [
+          "ar\u00eds",
+          "age",
+          "n-atriam",
+          "ariamh",
+          "ar\u00e9ir"
+        ],
+        "samples_fail": [
+          "biro",
+          "agena",
+          "Bordcheantair",
+          "Bhordcheantar",
+          "tsecoind"
+        ],
+        "offset": 1554,
+        "excepted": 0,
+        "name": "...agus roinnt dobhr\u00edathair a thosa\u00edonn le 'a'",
+        "total": 1765,
+        "final": false
+      },
+      {
+        "level_0": 1,
+        "level_1": 5,
+        "pass": 3,
+        "tick": 3,
+        "fail": 160,
+        "samples": [
+          "f\u00e9adfidh"
+        ],
+        "samples_fail": [
+          "biro",
+          "agena",
+          "Bordcheantair",
+          "Bhordcheantar",
+          "tsecoind"
+        ],
+        "offset": 1602,
+        "excepted": 0,
+        "name": "...agus 'f\u00e9adfidh'",
+        "total": 1765,
+        "final": true
+      }
+    ]
+  }
+}

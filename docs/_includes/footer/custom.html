@@ -1,0 +1,17 @@
+<!-- with thanks to https://forestry.io/blog/creating-a-multilingual-blog-with-jekyll/ -->
+
+{% if page.layout != 'archive' %}
+    {% assign posts=site.posts | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+    {% if posts.size == 0 %}
+        {% assign posts=site.pages | where:"lang-ref", page.lang-ref | sort: 'lang' %}
+    {% endif %}
+    {% if posts.size > 1 %}
+    <footer class="lang-options">
+        <ul>
+        {% for post in posts %}
+        <li><a href="{{ site.baseurl }}{{ post.url }}" class="{{ post.lang }}" title="View in {{post.lang}}">{{ site.data.languages[post.lang].icon }} {{ site.data.languages[post.lang].label }}</a></li>
+        {% endfor %}
+        </ul>
+    </footer>
+    {% endif %}
+{% endif %}
