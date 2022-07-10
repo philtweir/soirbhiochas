@@ -5,6 +5,8 @@
 layout: archive
 ---
 
+Language exception statistics for Irish.
+
 <ul class="languages">
 {% for lang in site.data.languages %}
 {% assign language = lang[1] %}
