@@ -189,7 +189,7 @@ test = ["pytest (>=6.2.5)", "lxml-stubs (>=0.3.0)"]
 type = "git"
 url = "https://github.com/philtweir/Gramadan.git"
 reference = "python-implementation-v2"
-resolved_reference = "9a208dc"
+resolved_reference = "6aef5a"
 subdirectory = "Python"
 
 [[package]]
