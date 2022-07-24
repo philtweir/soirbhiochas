@@ -1,0 +1,282 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Gender breakdown… - Soirbhíochas</title>
+<meta name="description" content="Interactive DRAFT">
+
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Soirbhíochas">
+<meta property="og:title" content="Gender breakdown…">
+<meta property="og:url" content="https://philtweir.github.io/soirbhiochas/en/grammar/2022/07/24/gender.html">
+
+
+  <meta property="og:description" content="Interactive DRAFT">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-07-24T21:39:00+00:00">
+
+
+
+
+
+
+<link rel="canonical" href="https://philtweir.github.io/soirbhiochas/en/grammar/2022/07/24/gender.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": null,
+      "url": "https://philtweir.github.io/soirbhiochas/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/soirbhiochas/feed.xml" type="application/atom+xml" rel="alternate" title="Soirbhíochas Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/soirbhiochas/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.22.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.3.0"></script>
+<!-- Import vega-embed -->
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+
+<!-- with thanks to https://forestry.io/blog/creating-a-multilingual-blog-with-jekyll/ -->
+
+  
+  
+  
+    
+  <link rel="alternate" hreflang="en" href="/en/grammar/2022/07/24/gender.html" />
+    
+  <link rel="alternate" hreflang="ga" href="/ga/grammar/2022/07/24/gender.html" />
+    
+  
+
+
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/soirbhiochas/">
+          Soirbhíochas
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Gender breakdown…">
+    <meta itemprop="description" content="Interactive DRAFT">
+    <meta itemprop="datePublished" content="2022-07-24T21:39:00+00:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Gender breakdown…
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Interactive DRAFT</p>
+
+<p>This is a draft, it has KNOWN ERRORS.</p>
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = {"config":{"view":{"continuousWidth":400,"continuousHeight":300,"strokeOpacity":0},"font":"League Spartan","range":{"category":["#008080","#aaaaaa","#dd0000","#eeeeee","#444444"]}},"data":{"name":"data-1a3cfbe44f67254f5ad03a27629f12ea"},"facet":{"row":{"field":"name","header":{"labels":false},"sort":{"field":"ix"},"title":null,"type":"nominal"}},"spec":{"layer":[{"mark":{"type":"text","align":"left","dx":-200,"fontSize":{"expr":"(1 - 0.2 * datum.level_0) * 20"},"xOffset":{"expr":"datum.level_0 * 20"},"yOffset":-20},"encoding":{"text":{"field":"name","type":"nominal"}}},{"mark":{"type":"bar","height":6,"xOffset":{"expr":"datum.level_0 * 20"},"yOffset":-10},"encoding":{"color":{"field":"color_key","legend":null,"type":"nominal"},"order":{"field":"split","type":"quantitative"},"x":{"axis":{"labels":false,"title":null},"field":"value","stack":"normalize","type":"quantitative"},"y":{"axis":{"labels":false,"title":null},"field":"variable","sort":["offset","tick","excepted","fail"],"type":"nominal"}},"transform":[{"fold":["offset","tick","excepted","fail"]},{"calculate":"indexof(['offset', 'tick', 'excepted', 'fail'], datum.key)","as":"split"},{"calculate":"datum.final && datum.key == \"fail\" ? \"fail_all\" : datum.key","as":"color_key"}]},{"mark":{"type":"rect","color":"#f8f8f8","height":60,"x":0,"x2":{"expr":"datum.level_0 * 20 * 0.9"},"yOffset":20}},{"mark":{"type":"rect","color":"#008080","height":60,"x":0,"x2":{"expr":"datum.level_0 * 20 * 0.1"},"yOffset":20}},{"layer":[{"mark":{"type":"rect","cornerRadius":10,"cursor":"pointer","height":30,"x2Offset":{"expr":"datum.level_0 * 20"},"xOffset":{"expr":"datum.level_0 * 20"},"yOffset":20},"encoding":{"color":{"condition":{"value":"#eeeeee","selection":"selector001"},"value":"#27a827"},"x":{"datum":0},"x2":{"field":"tick_norm","type":"quantitative"}},"selection":{"selector001":{"type":"single","empty":"none"}}},{"mark":{"type":"rect","cornerRadius":10,"cursor":"auto","height":30,"x2Offset":{"expr":"datum.level_0 * 20"},"xOffset":{"expr":"datum.level_0 * 20"},"yOffset":20},"encoding":{"color":{"condition":{"value":"#eeeeee","selection":"selector001"},"value":"#008080"},"x":{"field":"pass_norm","type":"quantitative"},"x2":{"field":"tick_norm","type":"quantitative"}}},{"mark":{"type":"rect","cornerRadius":10,"cursor":"auto","height":30,"x2Offset":{"expr":"datum.level_0 * 20"},"xOffset":{"expr":"datum.level_0 * 20"},"yOffset":20},"encoding":{"color":{"condition":{"value":"#eeeeee","selection":"selector001"},"value":"#008080"},"x":{"field":"pass_norm","type":"quantitative"},"x2":{"datum":1}},"transform":[{"filter":"(!datum.final)"}]},{"mark":{"type":"rect","cornerRadius":10,"cursor":"pointer","height":30,"x2Offset":{"expr":"datum.level_0 * 20"},"xOffset":{"expr":"datum.level_0 * 20"},"yOffset":20},"encoding":{"color":{"condition":{"value":"#eeeeee","selection":"selector002"},"value":"#dd0000"},"x":{"field":"pass_norm","type":"quantitative"},"x2":{"datum":1}},"selection":{"selector002":{"type":"single","empty":"none"}},"transform":[{"filter":"datum.final"}]},{"mark":{"type":"text","align":"left","dx":-200,"fontSize":{"expr":"(1 - 0.2 * datum.level_0) * 20"},"xOffset":{"expr":"datum.level_0 * 20 + 5"},"yOffset":10},"encoding":{"opacity":{"condition":{"value":0.9,"selection":"selector001"},"value":0.05},"text":{"field":"joined_samples","type":"nominal"}},"transform":[{"calculate":"join(datum.samples, \", \")","as":"joined_samples"}]},{"mark":{"type":"text","align":"left","color":"white","dx":-200,"fontSize":{"expr":"(1 - 0.2 * datum.level_0) * 20"},"text":{"expr":"round(datum.tick * 100 / datum.total) + \"% (\" + datum.tick + \")\""},"xOffset":{"expr":"datum.level_0 * 20 + 5"},"yOffset":10},"encoding":{"opacity":{"condition":{"value":0,"selection":"selector001"},"value":1}}},{"mark":{"type":"text","align":"left","color":"red","dx":-200,"fontSize":15,"fontWeight":"bold","xOffset":{"expr":"datum.level_0 * 20 + 20"},"yOffset":30},"encoding":{"opacity":{"condition":{"value":0.9,"selection":"selector001"},"value":0.0},"text":{"field":"joined_samples","type":"nominal"}},"transform":[{"filter":"datum.final"},{"calculate":"\"...\" + join(datum.samples_fail, \", \")","as":"joined_samples"}]},{"mark":{"type":"text","align":"right","color":"white","dx":-200,"fontSize":{"expr":"(1 - 0.2 * datum.level_0) * 13"},"fontWeight":"bold","text":{"expr":"\"Exc: \" + round(datum.excepted * 100 / datum.total) + \"% (\" + datum.excepted + \")\""},"xOffset":{"expr":"datum.level_0 * 20 + 380"},"yOffset":3},"encoding":{"opacity":{"condition":{"value":0,"selection":"selector001"},"value":1}},"transform":[{"filter":"datum.final"}]},{"mark":{"type":"text","align":"right","color":"white","dx":-200,"fontSize":{"expr":"(1 - 0.2 * datum.level_0) * 13"},"fontWeight":"bold","text":{"expr":"\"F: \" + round(datum.fail * 100 / datum.total) + \"% (\" + datum.fail + \")\""},"xOffset":{"expr":"datum.level_0 * 20 + 380"},"yOffset":18},"encoding":{"opacity":{"condition":{"value":0,"selection":"selector001"},"value":1}},"transform":[{"filter":"datum.final"}]}]}],"transform":[{"calculate":"datum.pass + datum.fail","as":"used"},{"calculate":"datum.excepted / datum.used","as":"excepted_norm"},{"calculate":"datum.pass / datum.used","as":"pass_norm"},{"calculate":"datum.tick / datum.used","as":"tick_norm"},{"calculate":"datum.fail / datum.used","as":"fail_norm"}]},"padding":0,"spacing":0,"$schema":"https://vega.github.io/schema/vega-lite/v4.17.0.json","datasets":{"data-1a3cfbe44f67254f5ad03a27629f12ea":[{"level_0":0,"level_1":0,"pass":28074,"tick":18064,"fail":992,"samples":["lár","luí","aigéan","solas","éiclips"],"samples_fail":["ghrian","gCeanncheathrú","mhaime","pian","shlat"],"offset":0,"excepted":10010,"name":"Glac leis go bhfuil gach focal firinscneach ...","total":29066,"final":true},{"level_0":1,"level_1":0,"pass":157,"tick":157,"fail":10845,"samples":["Gaeilge","Ghaeilge","Eabhrais","nGiúdais","hEabhrais"],"samples_fail":["tubaiste","ghrian","fáil","hoíche","dteagmháil"],"offset":0,"excepted":0,"name":"...or if it is a feminine language","total":11002,"final":false},{"level_0":1,"level_1":1,"pass":60,"tick":60,"fail":10785,"samples":["Ghearmáin","Cholóim","nGearmáin","Fhrainc","Bheilg"],"samples_fail":["tubaiste","ghrian","fáil","hoíche","dteagmháil"],"offset":157,"excepted":0,"name":"...or if it is a feminine country","total":11002,"final":false},{"level_0":1,"level_1":2,"pass":894,"tick":894,"fail":9891,"samples":["tubaiste","hoíche","Mamaí","saoirse","imní"],"samples_fail":["ghrian","fáil","dteagmháil","gCeanncheathrú","sagartóireacht"],"offset":217,"excepted":0,"name":"...or it is (roughly) a feminine abstract noun ending in e/i","total":11002,"final":false},{"level_0":1,"level_1":3,"pass":1394,"tick":1394,"fail":8497,"samples":["sagartóireacht","oifigiúlacht","iarracht","chosúlacht","hiarracht"],"samples_fail":["ghrian","fáil","dteagmháil","gCeanncheathrú","áit"],"offset":1111,"excepted":0,"name":"...or if it is a feminine multisyllable word with known ending","total":11002,"final":false},{"level_0":1,"level_1":4,"pass":268,"tick":268,"fail":8229,"samples":["bialann","Rannóg","dheasóg","Ceiliúrlann","neantóga"],"samples_fail":["ghrian","fáil","dteagmháil","gCeanncheathrú","áit"],"offset":2505,"excepted":0,"name":"...or if it is a feminine word with another standard feminine ending","total":11002,"final":false},{"level_0":1,"level_1":5,"pass":7237,"tick":7237,"fail":992,"samples":["fáil","dteagmháil","áit","litir","constaicí"],"samples_fail":["ghrian","gCeanncheathrú","mhaime","pian","shlat"],"offset":2773,"excepted":0,"name":"...or if it is feminine with a slender ending","total":11002,"final":true}]}}
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<p>Standard words in the “Irish UD treebank”,
+counted with repetition (~29000 words).</p>
+
+<p>(using <a href="https://github.com/UniversalDependencies/UD_Irish-IDT">UD_Irish-IDT</a>)</p>
+
+<p>Inspired by
+<a href="https://en.wikibooks.org/wiki/Irish/Reference/Nouns">Wikibooks Irish</a></p>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-07-24T21:39:00+00:00">July 24, 2022</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/soirbhiochas/ga/grammar/2022/07/10/caol-le-caol.html" class="pagination--pager" title="Caol le caol…
+">Previous</a>
+    
+    
+      <a href="/soirbhiochas/ga/grammar/2022/07/24/gender.html" class="pagination--pager" title="Miondealú inscne…
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- with thanks to https://forestry.io/blog/creating-a-multilingual-blog-with-jekyll/ -->
+
+
+    
+    
+    
+    <footer class="lang-options">
+        <ul>
+        
+        <li><a href="/soirbhiochas/en/grammar/2022/07/24/gender.html" class="en" title="View in en">🇬🇧 English</a></li>
+        
+        <li><a href="/soirbhiochas/ga/grammar/2022/07/24/gender.html" class="ga" title="View in ga">🇮🇪 Gaeilge</a></li>
+        
+        </ul>
+    </footer>
+    
+
+
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+
+    
+      <li><a href="/soirbhiochas/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Soirbhíochas. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/soirbhiochas/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
