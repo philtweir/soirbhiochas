@@ -17,7 +17,7 @@
     }
   },
   "data": {
-    "name": "data-930c0e45566468a725ded97c32b78cac"
+    "name": "data-1a3cfbe44f67254f5ad03a27629f12ea"
   },
   "facet": {
     "row": {
@@ -481,13 +481,13 @@
   "spacing": 0,
   "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
   "datasets": {
-    "data-930c0e45566468a725ded97c32b78cac": [
+    "data-1a3cfbe44f67254f5ad03a27629f12ea": [
       {
         "level_0": 0,
         "level_1": 0,
-        "pass": 28103,
-        "tick": 17960,
-        "fail": 963,
+        "pass": 28074,
+        "tick": 18064,
+        "fail": 992,
         "samples": [
           "l\u00e1r",
           "lu\u00ed",
@@ -500,10 +500,10 @@
           "gCeanncheathr\u00fa",
           "mhaime",
           "pian",
-          "bas"
+          "shlat"
         ],
         "offset": 0,
-        "excepted": 10143,
+        "excepted": 10010,
         "name": "Glac leis go bhfuil gach focal firinscneach ...",
         "total": 29066,
         "final": true
@@ -513,7 +513,7 @@
         "level_1": 0,
         "pass": 157,
         "tick": 157,
-        "fail": 10949,
+        "fail": 10845,
         "samples": [
           "Gaeilge",
           "Ghaeilge",
@@ -531,7 +531,7 @@
         "offset": 0,
         "excepted": 0,
         "name": "...or if it is a feminine language",
-        "total": 11106,
+        "total": 11002,
         "final": false
       },
       {
@@ -539,7 +539,7 @@
         "level_1": 1,
         "pass": 60,
         "tick": 60,
-        "fail": 10889,
+        "fail": 10785,
         "samples": [
           "Ghearm\u00e1in",
           "Chol\u00f3im",
@@ -557,15 +557,15 @@
         "offset": 157,
         "excepted": 0,
         "name": "...or if it is a feminine country",
-        "total": 11106,
+        "total": 11002,
         "final": false
       },
       {
         "level_0": 1,
         "level_1": 2,
-        "pass": 903,
-        "tick": 903,
-        "fail": 9986,
+        "pass": 894,
+        "tick": 894,
+        "fail": 9891,
         "samples": [
           "tubaiste",
           "ho\u00edche",
@@ -583,7 +583,7 @@
         "offset": 217,
         "excepted": 0,
         "name": "...or it is (roughly) a feminine abstract noun ending in e/i",
-        "total": 11106,
+        "total": 11002,
         "final": false
       },
       {
@@ -591,7 +591,7 @@
         "level_1": 3,
         "pass": 1394,
         "tick": 1394,
-        "fail": 8592,
+        "fail": 8497,
         "samples": [
           "sagart\u00f3ireacht",
           "oifigi\u00falacht",
@@ -606,10 +606,10 @@
           "gCeanncheathr\u00fa",
           "\u00e1it"
         ],
-        "offset": 1120,
+        "offset": 1111,
         "excepted": 0,
         "name": "...or if it is a feminine multisyllable word with known ending",
-        "total": 11106,
+        "total": 11002,
         "final": false
       },
       {
@@ -617,7 +617,7 @@
         "level_1": 4,
         "pass": 268,
         "tick": 268,
-        "fail": 8324,
+        "fail": 8229,
         "samples": [
           "bialann",
           "Rann\u00f3g",
@@ -632,36 +632,36 @@
           "gCeanncheathr\u00fa",
           "\u00e1it"
         ],
-        "offset": 2514,
+        "offset": 2505,
         "excepted": 0,
         "name": "...or if it is a feminine word with another standard feminine ending",
-        "total": 11106,
+        "total": 11002,
         "final": false
       },
       {
         "level_0": 1,
         "level_1": 5,
-        "pass": 7361,
-        "tick": 7361,
-        "fail": 963,
+        "pass": 7237,
+        "tick": 7237,
+        "fail": 992,
         "samples": [
           "f\u00e1il",
           "dteagmh\u00e1il",
           "\u00e1it",
           "litir",
-          "m\u00e9id"
+          "constaic\u00ed"
         ],
         "samples_fail": [
           "ghrian",
           "gCeanncheathr\u00fa",
           "mhaime",
           "pian",
-          "bas"
+          "shlat"
         ],
-        "offset": 2782,
+        "offset": 2773,
         "excepted": 0,
         "name": "...or if it is feminine with a slender ending",
-        "total": 11106,
+        "total": 11002,
         "final": true
       }
     ]
