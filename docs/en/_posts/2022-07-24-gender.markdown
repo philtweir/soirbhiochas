@@ -21,7 +21,7 @@ This is a draft, it has KNOWN ERRORS.
 </script>
 
 Standard words in the "Irish UD treebank",
-counted with repetition (~91000 words).
+counted with repetition (~29000 words).
 
 (using [UD_Irish-IDT](https://github.com/UniversalDependencies/UD_Irish-IDT))
 

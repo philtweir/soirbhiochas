@@ -21,7 +21,7 @@ Is dréacht é seo, tá EARRÁIDÍ AITHEANTA aige.
 </script>
 
 Focail chaighdéanacha sa "Irish UD treebank",
-á gcomhaireamh go athrá (~91000 focal).
+á gcomhaireamh go athrá (~29000 focal).
 
 (ag baint úsáid as [UD_Irish-IDT](https://github.com/UniversalDependencies/UD_Irish-IDT))
 
