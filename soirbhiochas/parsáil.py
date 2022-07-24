@@ -12,11 +12,39 @@ from gramadan.v2.database import UPOS_TYPE_MAP
 from gramadan.opers import Opers
 
 class FocalGinearalta:
-    def __init__(self, token, focal: Optional[Entity]):
+    def __init__(self, token, focal: Optional[Entity], keep_lemmaless_words: bool = False):
         self.upos = token.upos
         self.token = token
+        if not focal and token.upos in ("NOUN", "PROPN") and token.xpos != "Item":
+            # 'Item' normally indicates nouns for e.g. letters of the alphabet, which do
+            # not (I believe) have the usual properties of nouns.
+            try:
+                focal = Noun.create_from_conllu(token, default_nom_case=(
+                    token.upos == "PROPN" or # Don't worry about case if proper noun
+                    self.foreign or # or a loanword
+                    token.xpos == "Subst" or # or a substantive noun
+                    token.feats.get("VerbForm") or # or a verbal noun form
+                    token.feats.get("Abbr") # or an abbreviation
+                )) # ...but still use it if available.
+            except RuntimeError:
+                focal = None
+
+        # If focal cannot give us a lemma, we are better not having the word -
+        # we will only confuse rules.
+        try:
+            self.lemma = focal.getLemma() if focal else token.lemma
+        except IndexError:
+            self.lemma = None
+            if not keep_lemmaless_words:
+                focal = None
+
         self.focal = focal
-        self.lemma = focal.getLemma() if focal else token.lemma
+
+    @property
+    def foreign(self):
+        return self.token.xpos == "Foreign" or (
+            self.token.feats.get("Foreign", False) and "Yes" in self.token.feats["Foreign"]
+        )
 
     def demut(self):
         return Opers.Demutate(str(self))
@@ -41,6 +69,9 @@ class FocalGinearalta:
 
     def __getitem__(self, val):
         return self.token.form[val]
+
+    def __lt__(self, upos: str):
+        return self.token.upos == upos
 
     def new_for_form(self, form):
         token = pyconll.unit.token.Token(self.token.conll())

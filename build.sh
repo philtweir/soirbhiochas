@@ -6,4 +6,5 @@ poetry install
 curl -O https://raw.githubusercontent.com/UniversalDependencies/UD_Irish-IDT/629a3dbd0805df29204ac85d24613c187268c235/ga_idt-ud-train.conllu
 git clone https://github.com/michmech/BuNaMo data
 git clone https://github.com/philtweir/wikt-irish-prefixes wikt-irish-prefixes
-poetry run python -m soirbhiochas.staidreamh ga_idt-ud-train.conllu suspected_typos.txt ./docs/_data/caol_le_caol.json
+poetry run python -m soirbhiochas.staidreamh caol_le_caol ga_idt-ud-train.conllu suspected_typos.txt ./docs/_data/caol_le_caol.json
+poetry run python -m soirbhiochas.staidreamh pioc_inscne ga_idt-ud-train.conllu suspected_typos.txt ./docs/_data/gender_guessing.json

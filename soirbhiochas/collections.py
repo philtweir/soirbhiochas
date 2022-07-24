@@ -1,5 +1,10 @@
 import re
+import copy
+import csv
+from typing import Optional
 from gramadan.v2.opers import Opers
+from gramadan.v2.np import NP
+from gramadan.features import Mutation
 from .loadable import Loadable
 
 class Prepositions(Loadable):
@@ -56,5 +61,48 @@ class Prefixes(Loadable):
                 if len(q) > 1
             ]
 
+class Countries(Loadable):
+    countries = None
+
+    def __contains__(self, focal):
+        if not self.countries:
+            self.load()
+
+        lem = focal.demut().lower()
+        indef_focal = copy.copy(focal.focal)
+        indef_focal.isDefinite = False
+        np = NP.create_from_noun(indef_focal)
+        possible_forms = [
+            lem,
+        ]
+        if np.sgNomArt:
+            possible_forms.append(np.sgNomArt[0].value.lower())
+        return any([f in self.countries for f in possible_forms])
+
+
+    def load(self):
+        with open(self.loader["countries"], "r") as f:
+            self.countries = [
+                row.strip().lower() for row in f.readlines()
+            ]
+
+class Languages(Loadable):
+    languages: Optional[list] = None
+
+    def __contains__(self, focal):
+        if not self.languages:
+            self.load()
+
+        lem = str(focal.focal.getLemma()).lower()
+        return lem in self.languages
+
+    def load(self):
+        with open(self.loader["languages"], "r") as f:
+            self.languages = [
+                p.strip().lower() for p in f.readlines()
+            ]
+
 PREFIXES = Prefixes()
 PREPOSITIONS = Prepositions()
+LANGUAGES = Languages()
+COUNTRIES = Countries()

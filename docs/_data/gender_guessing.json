@@ -17,7 +17,7 @@
     }
   },
   "data": {
-    "name": "data-d06afbf9e670062c0c58a94fb8091af6"
+    "name": "data-930c0e45566468a725ded97c32b78cac"
   },
   "facet": {
     "row": {
@@ -481,206 +481,187 @@
   "spacing": 0,
   "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json",
   "datasets": {
-    "data-d06afbf9e670062c0c58a94fb8091af6": [
+    "data-930c0e45566468a725ded97c32b78cac": [
       {
         "level_0": 0,
         "level_1": 0,
-        "pass": 90522,
-        "tick": 88892,
-        "fail": 135,
+        "pass": 28103,
+        "tick": 17960,
+        "fail": 963,
         "samples": [
-          "As",
           "l\u00e1r",
-          "na",
-          "tubaiste",
-          "is"
+          "lu\u00ed",
+          "aig\u00e9an",
+          "solas",
+          "\u00e9iclips"
         ],
         "samples_fail": [
-          "agena",
-          "Bordcheantair",
-          "Bhordcheantar",
-          "tsecoind",
-          "magenta"
+          "ghrian",
+          "gCeanncheathr\u00fa",
+          "mhaime",
+          "pian",
+          "bas"
         ],
         "offset": 0,
-        "excepted": 1630,
-        "name": "Caol le caol, leathan le leathan ...",
-        "total": 90657,
+        "excepted": 10143,
+        "name": "Glac leis go bhfuil gach focal firinscneach ...",
+        "total": 29066,
         "final": true
       },
       {
         "level_0": 1,
         "level_1": 0,
-        "pass": 90,
-        "tick": 90,
-        "fail": 1675,
+        "pass": 157,
+        "tick": 157,
+        "fail": 10949,
         "samples": [
-          "Ansin",
-          "Anseo"
+          "Gaeilge",
+          "Ghaeilge",
+          "Eabhrais",
+          "nGi\u00fadais",
+          "hEabhrais"
         ],
         "samples_fail": [
-          "gCeanncheathr\u00fa",
-          "faoina",
-          "neamhchead",
-          "ina",
-          "thraenacha"
+          "tubaiste",
+          "ghrian",
+          "f\u00e1il",
+          "ho\u00edche",
+          "dteagmh\u00e1il"
         ],
         "offset": 0,
         "excepted": 0,
-        "name": "...ach amh\u00e1in 'ansin' agus 'anseo'",
-        "total": 1765,
+        "name": "...or if it is a feminine language",
+        "total": 11106,
         "final": false
       },
       {
         "level_0": 1,
         "level_1": 1,
-        "pass": 900,
-        "tick": 900,
-        "fail": 775,
+        "pass": 60,
+        "tick": 60,
+        "fail": 10889,
         "samples": [
-          "gCeanncheathr\u00fa",
-          "neamhchead",
-          "inr\u00e1taithe",
-          "comhioml\u00e1n",
-          "tSeanchill"
+          "Ghearm\u00e1in",
+          "Chol\u00f3im",
+          "nGearm\u00e1in",
+          "Fhrainc",
+          "Bheilg"
         ],
         "samples_fail": [
-          "faoina",
-          "ina",
-          "thraenacha",
-          "ar\u00eds",
-          "lena"
+          "tubaiste",
+          "ghrian",
+          "f\u00e1il",
+          "ho\u00edche",
+          "dteagmh\u00e1il"
         ],
-        "offset": 90,
+        "offset": 157,
         "excepted": 0,
-        "name": "...agus roinnt focail chumaisc",
-        "total": 1765,
+        "name": "...or if it is a feminine country",
+        "total": 11106,
         "final": false
       },
       {
         "level_0": 1,
         "level_1": 2,
-        "pass": 532,
-        "tick": 532,
-        "fail": 243,
+        "pass": 903,
+        "tick": 903,
+        "fail": 9986,
         "samples": [
-          "faoina",
-          "ina",
-          "lena",
-          "inar",
-          "Lena"
+          "tubaiste",
+          "ho\u00edche",
+          "Mama\u00ed",
+          "saoirse",
+          "imn\u00ed"
         ],
         "samples_fail": [
-          "thraenacha",
-          "ar\u00eds",
-          "biro",
-          "age",
-          "agena"
+          "ghrian",
+          "f\u00e1il",
+          "dteagmh\u00e1il",
+          "gCeanncheathr\u00fa",
+          "sagart\u00f3ireacht"
         ],
-        "offset": 990,
+        "offset": 217,
         "excepted": 0,
-        "name": "...agus roinnt reamhfhocail",
-        "total": 1765,
+        "name": "...or it is (roughly) a feminine abstract noun ending in e/i",
+        "total": 11106,
         "final": false
       },
       {
         "level_0": 1,
         "level_1": 3,
-        "pass": 39,
-        "tick": 39,
-        "fail": 204,
+        "pass": 1394,
+        "tick": 1394,
+        "fail": 8592,
         "samples": [
-          "thraenacha",
-          "Gaelscoileanna",
-          "haturnaetha",
-          "Ghaelach",
-          "gc\u00e9adlaethanta"
+          "sagart\u00f3ireacht",
+          "oifigi\u00falacht",
+          "iarracht",
+          "chos\u00falacht",
+          "hiarracht"
         ],
         "samples_fail": [
-          "ar\u00eds",
-          "biro",
-          "age",
-          "agena",
-          "Bordcheantair"
+          "ghrian",
+          "f\u00e1il",
+          "dteagmh\u00e1il",
+          "gCeanncheathr\u00fa",
+          "\u00e1it"
         ],
-        "offset": 1522,
+        "offset": 1120,
         "excepted": 0,
-        "name": "...agus nuair a bh\u00edonn 'ae' leathan i nd\u00e1irire",
-        "total": 1765,
+        "name": "...or if it is a feminine multisyllable word with known ending",
+        "total": 11106,
         "final": false
       },
       {
         "level_0": 1,
         "level_1": 4,
-        "pass": 48,
-        "tick": 48,
-        "fail": 156,
+        "pass": 268,
+        "tick": 268,
+        "fail": 8324,
         "samples": [
-          "ar\u00eds",
-          "age",
-          "n-atriam",
-          "ariamh",
-          "ar\u00e9ir"
+          "bialann",
+          "Rann\u00f3g",
+          "dheas\u00f3g",
+          "Ceili\u00farlann",
+          "neant\u00f3ga"
         ],
         "samples_fail": [
-          "biro",
-          "agena",
-          "Bordcheantair",
-          "Bhordcheantar",
-          "tsecoind"
+          "ghrian",
+          "f\u00e1il",
+          "dteagmh\u00e1il",
+          "gCeanncheathr\u00fa",
+          "\u00e1it"
         ],
-        "offset": 1561,
+        "offset": 2514,
         "excepted": 0,
-        "name": "...agus roinnt dobhr\u00edathair a thosa\u00edonn le 'a'",
-        "total": 1765,
+        "name": "...or if it is a feminine word with another standard feminine ending",
+        "total": 11106,
         "final": false
       },
       {
         "level_0": 1,
         "level_1": 5,
-        "pass": 18,
-        "tick": 18,
-        "fail": 138,
+        "pass": 7361,
+        "tick": 7361,
+        "fail": 963,
         "samples": [
-          "biro",
-          "Comptroller-General",
-          "twaddle",
-          "LINGUA",
-          "petroleum"
+          "f\u00e1il",
+          "dteagmh\u00e1il",
+          "\u00e1it",
+          "litir",
+          "m\u00e9id"
         ],
         "samples_fail": [
-          "agena",
-          "Bordcheantair",
-          "Bhordcheantar",
-          "tsecoind",
-          "magenta"
+          "ghrian",
+          "gCeanncheathr\u00fa",
+          "mhaime",
+          "pian",
+          "bas"
         ],
-        "offset": 1609,
+        "offset": 2782,
         "excepted": 0,
-        "name": "...agus focail iasachta",
-        "total": 1765,
-        "final": false
-      },
-      {
-        "level_0": 1,
-        "level_1": 6,
-        "pass": 3,
-        "tick": 3,
-        "fail": 135,
-        "samples": [
-          "f\u00e9adfidh"
-        ],
-        "samples_fail": [
-          "agena",
-          "Bordcheantair",
-          "Bhordcheantar",
-          "tsecoind",
-          "magenta"
-        ],
-        "offset": 1627,
-        "excepted": 0,
-        "name": "...agus 'f\u00e9adfidh'",
-        "total": 1765,
+        "name": "...or if it is feminine with a slender ending",
+        "total": 11106,
         "final": true
       }
     ]

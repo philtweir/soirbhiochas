@@ -1,0 +1,29 @@
+---
+layout: single
+title:  "Gender breakdown..."
+date:   2022-07-24 22:39:00 +0100
+lang:   en
+lang-ref: gender-guessing
+categories: grammar
+---
+
+Interactive DRAFT
+
+This is a draft, it has KNOWN ERRORS.
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = {{ site.data.gender_guessing | jsonify }}
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+Standard words in the "Irish UD treebank",
+counted with repetition (~91000 words).
+
+(using [UD_Irish-IDT](https://github.com/UniversalDependencies/UD_Irish-IDT))
+
+Inspired by
+[Wikibooks Irish](https://en.wikibooks.org/wiki/Irish/Reference/Nouns)

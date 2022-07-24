@@ -1,0 +1,29 @@
+---
+layout: single
+title:  "Miondealú inscne..."
+date:   2022-07-24 22:39:00 +0100
+lang:   ga
+lang-ref: gender-guessing
+categories: grammar
+---
+
+DRÉACHT idirghníomhach.
+
+Is dréacht é seo, tá EARRÁIDÍ AITHEANTA aige.
+
+<div id="vis"></div>
+
+<script type="text/javascript">
+  var spec = {{ site.data.gender_guessing | jsonify }}
+  vegaEmbed('#vis', spec).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+Focail chaighdéanacha sa "Irish UD treebank",
+á gcomhaireamh go athrá (~91000 focal).
+
+(ag baint úsáid as [UD_Irish-IDT](https://github.com/UniversalDependencies/UD_Irish-IDT))
+
+Spreagtha ag
+[Wikibooks Irish](https://en.wikibooks.org/wiki/Irish/Reference/Nouns)

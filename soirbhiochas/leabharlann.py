@@ -1,4 +1,6 @@
 from typing import Optional
+import re
+from gramadan.v2.features import Gender
 from gramadan.v2.opers import Opers
 from .rialacha import Riail, RiailIs
 from .collections import PREPOSITIONS, PREFIXES
@@ -101,6 +103,10 @@ def is_breakpoint_in_failure_area(focal, clc_pointí_teipe, fc_pointí_briste):
 
     return matches
 
+def is_foreign(focal: FocalGinearalta) -> bool:
+    # This is _not_ thorough, but by the point we apply it we should have caught most other scenarios
+    return focal.foreign
+
 def expanded_form_passes(back_to_top, con_expansion, focal):
     focal_exp = focal.new_for_form(con_expansion)
     return True # back_to_top.rith(focal_exp, passed_already=True) RMV
@@ -150,6 +156,11 @@ CAOL_LE_CAOL = (CaolLeCaol()
         "...agus roinnt dobhríathair a thosaíonn le 'a'"
     )
     .eisceacht_a_dhéanamh(
+        # This is a loanword
+        is_foreign,
+        "...agus focail iasachta"
+    )
+    .eisceacht_a_dhéanamh(
         # There are enough examples to suggest this is the one
         # true exception - féadfaidh exists, but so does féadfidh
         # in a range of sources
@@ -158,7 +169,80 @@ CAOL_LE_CAOL = (CaolLeCaol()
     )
 )
 
+class GlacFirinscneach(Riail):
+    gairid = "Glac firinscneach"
+    prefix = "gf"
+    fada = "Glac leis go bhfuil gach focal firinscneach"
+    béarla = "Assume every word is masculine"
+    míniú = "Tá formhór na bhfocal firinscneach, mar sin glac leis go bhfuil siad uile"
+    soláithraíonn = ()
 
+    def tástáladh(self, focal: FocalGinearalta) -> bool:
+        return (focal.focal is not None) and focal.focal.gender == Gender.Masc
+
+def deireadh_caol(focal: FocalGinearalta) -> bool:
+    return Opers.IsSlenderEnding(focal.lemma)
+
+KNOWN_FEMININE_ENDINGS = [
+    "eog",
+    "óg",
+    "lann"
+]
+re_fe = re.compile(f"({'|'.join(KNOWN_FEMININE_ENDINGS)})$")
+def has_a_known_feminine_ending(focal: FocalGinearalta) -> bool:
+    return (re_fe.search(focal.lemma) is not None)
+
+def is_a_multisyllable_word_ending_in_acht_or_íocht(focal: FocalGinearalta) -> bool:
+    return (
+        (re.search("(acht|íocht)$", focal.lemma) is not None) and
+        Opers.PolysyllabicV2(focal.lemma)
+    )
+
+relevant_fourth_declension_feminine_words = set()
+def is_fourth_declension_feminine(focal: FocalGinearalta) -> bool:
+    if focal.lemma[-1] not in Opers.VowelsSlender or focal < "PROPN" or not focal.focal:
+        return False
+
+    # We record this simply so you can see what they are later
+    if focal.focal.gender == Gender.Fem:
+        relevant_fourth_declension_feminine_words.add(focal.focal.getLemma())
+
+    return focal.focal.declension == 4
+
+from soirbhiochas.collections import COUNTRIES, LANGUAGES
+
+def is_a_country(focal: FocalGinearalta):
+    return focal < "PROPN" and focal in COUNTRIES
+
+def is_a_language(focal: FocalGinearalta):
+    return focal < "PROPN" and focal in LANGUAGES
+
+PIOC_INSCNE = (GlacFirinscneach()
+    .eisceacht_a_dhéanamh(
+        is_a_language,
+        "...or if it is a feminine language"
+    )
+    .eisceacht_a_dhéanamh(
+        is_a_country,
+        "...or if it is a feminine country"
+    )
+    .eisceacht_a_dhéanamh(
+        is_fourth_declension_feminine,
+        "...or it is (roughly) a feminine abstract noun ending in e/i"
+    )
+    .eisceacht_a_dhéanamh(
+        is_a_multisyllable_word_ending_in_acht_or_íocht,
+        "...or if it is a feminine multisyllable word with known ending"
+    )
+    .eisceacht_a_dhéanamh(
+        has_a_known_feminine_ending,
+        "...or if it is a feminine word with another standard feminine ending"
+    )
+    .eisceacht_a_dhéanamh(
+        deireadh_caol,
+        "...or if it is feminine with a slender ending"
+    )
+)
 
 def rith(riail, focal):
     return riail.rith(focal, False)
