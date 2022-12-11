@@ -9,7 +9,9 @@ from gramadan.v2.opers import Opers
 from tqdm import tqdm
 
 from .rialacha import RiailCumaisc
-from .leabharlann import rith, CAOL_LE_CAOL, PIOC_INSCNE 
+from .leabharlann import rith
+from .leabharlann.caol_le_caol import CAOL_LE_CAOL
+from .leabharlann.pioc_inscne import PIOC_INSCNE
 from .loadable import add_loadable
 from collections import Counter
 
@@ -27,6 +29,25 @@ def count_rule_by_word(riail, corpas_iter, filt=None):
         caol_le_caol = rith(riail, focal)
         if not caol_le_caol:
             rialacha[str(focal)] += 1
+
+    return rialacha, statistics
+
+def count_rule_by_tuple(riail, corpas_iter, filt=None):
+    rialacha = Counter()
+    statistics = {}
+    def _capture_stats(it):
+        statistics['codach'] = yield from it
+
+    for codach in tqdm(_capture_stats(corpas_iter), total=len(corpas_iter)):
+        if not filt(codach):
+            # We assume proper nouns are irrelevant as exceptions
+            continue
+
+        # Should check rule is tuple-compatible (for a given length)
+
+        passed = rith(riail, codach)
+        if not passed:
+            rialacha[str(codach)] += 1
 
     return rialacha, statistics
 

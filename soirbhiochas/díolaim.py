@@ -37,6 +37,37 @@ class FocailTrasnaitheoir:
     def __len__(self):
         return sum(len(abairt) for abairt in self.sonraí)
 
+class TupleFocalTrasnaitheoir:
+    def __init__(self, sonraí, go_focal: Callable, fad: int):
+        self.sonraí = sonraí
+        self.go_focal = go_focal
+        self.fad = fad
+
+    def __iter__(self):
+        success, failure, unknown = 0, 0, 0
+        if self.sonraí is None:
+            raise RuntimeError("Lód sonraí ar dtús")
+
+        banc_focal_ainmfhocal: dict[str, list[Noun]] = {}
+        for abairt in self.sonraí:
+            for comhartha in abairt:
+                try:
+                    focal = self.go_focal(comhartha)
+                except KeyError:
+                    failure += 1
+                    yield parsáil.FocalGinearalta(comhartha, None)
+                else:
+                    if comhartha.upos in ('PROPN', 'SYM', 'X'):
+                        unknown += 1
+                    else:
+                        success += 1
+                    yield focal
+
+        return success, failure, unknown
+
+    def __len__(self):
+        return sum(len(abairt) for abairt in self.sonraí)
+
 class Díolaim:
     def __init__(self, comhartha_go_focal: Callable):
         self.sonraí: Optional[Iterable] = None
